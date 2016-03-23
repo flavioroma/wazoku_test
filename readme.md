@@ -41,9 +41,7 @@ Please create a third pull request for this work.
 
 ## Getting started
 
-To get started with the code, clone this repo to a directory on your local machine (for help, see https://help.github.com/articles/cloning-a-repository/).
-
-    git clone [repo_url] /tmp/wazoku_test
+To get started with the code, extract the zip file to a directory on your local machine (e.g. `/tmp/wazoku_test`).
 
 Create a new virtualenv in this checked out repo.
 
