@@ -14,7 +14,7 @@ site and emails the resulting data file to a named manager. The script can be ru
 
 ## Exercise 1
 
-Clients now wish to receive a list of inactive users as well as active ones. Given the limitation
+Our clients wish to receive a list of inactive users as well as active ones. Given the limitation
 of the csv format, we propose generating an Excel document instead of a csv file. Use the
 [openpyxl](https://openpyxl.readthedocs.org/) library to modify the code to produce an xlsx document
 containing two sheets, the first mirrors the csv with a list of active users and their activity, the
@@ -25,10 +25,10 @@ Please create a pull request for this work.
 
 ## Exercise 2
 
-After a recent refactoring this code appears to have stopped working as
-our customers are now reporting they are not receiving the emails when we run the script
+Although the tests are all passing, after a recent refactoring this code appears to have stopped working as
+our customers are all reporting they are not receiving the emails when we run the script
 (although occasionally the wrong manager does receive an email).
-Please clone this repo, identify and fix the problem and issue a pull request for your fix.
+Please identify and fix the problem and issue a second pull request for your fix.
 
 Bonus marks will be awarded for the addition of tests against your fix
 
@@ -41,8 +41,13 @@ Please create a third pull request for this work.
 
 ## Getting started
 
-To get started with the code, create a new virtualenv
+To get started with the code, clone this repo to a directory on your local machine (for help, see https://help.github.com/articles/cloning-a-repository/).
 
+    git clone [repo_url] /tmp/wazoku_test
+
+Create a new virtualenv in this checked out repo.
+
+    cd /tmp/wazoku_test
     virtualenv .
 
 
