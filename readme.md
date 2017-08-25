@@ -1,15 +1,49 @@
 # Wazoku customer support developer test
 
 ## Description
-This repo represents a stripped down version of our core ideas platform product 'spotlight'.
+This repo represents a stripped down version of our core ideas platform product 'Idea Spotlight'.
 We have a customer export script named `user_activity_export.sh` which is run manually
 and collates all the user activity for a given customer across the
-site and emails the resulting data file to a named manager. The script can be run with the following:
+site then emails the resulting data file to a named manager.
+
+## Getting started
+
+To get started with the code, extract the zip file to a directory on your local machine (e.g. `/tmp/wazoku_test`).
+
+Create a new virtualenv in this checked out repo.
+
+    cd /tmp/wazoku_test
+    virtualenv .
+
+
+Then install the dependencies:
+
+    bin/pip install -r requirements.txt
+
+
+Set the default django settings file used by all following commands:
 
     export DJANGO_SETTINGS_MODULE=exercise.settings
+
+
+The code in this repo uses an sqlite database as the persistence layer. You can initialize an sqlite database (this db will be stored in the file `./db.sqlite3`)
+
+    bin/python manage.py migrate
+
+There is a simple django `populate_db` command which can be used to prime the database with some example data
+
+    bin/python manage.py populate_db
+
+The user export script can be run with the following:
+
     bin/python -m scripts.user_activity_export \
       -c example.com \
       -e recipient@email.com
+
+There is also a unit test which can be used to validate the code:
+
+    bin/python manage.py test tests/
+
 
 
 ## Exercise 1
@@ -38,27 +72,3 @@ The current script is not particularly efficient against large customers. Can yo
 the current code and reduce it's complexity from `O(N)` to `O(1)`. You might want to consider using [assertNumQueries]( https://docs.djangoproject.com/en/1.9/topics/testing/tools/#django.test.TransactionTestCase.assertNumQueries) to help you confirm this.
 
 Please create a third pull request for this work.
-
-## Getting started
-
-To get started with the code, extract the zip file to a directory on your local machine (e.g. `/tmp/wazoku_test`).
-
-Create a new virtualenv in this checked out repo.
-
-    cd /tmp/wazoku_test
-    virtualenv .
-
-
-Then install the dependencies:
-
-    bin/pip install -r requirements.txt
-
-
-Initialize an sqlite database
-
-    bin/python manage.py migrate
-
-
-The tests can be run with:
-
-    bin/python manage.py test tests/
