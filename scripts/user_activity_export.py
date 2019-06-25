@@ -9,17 +9,18 @@ to an email address specified via a command line parameter
 
 import argparse
 import csv
-import itertools
 import os
 from collections import Counter
 
-from central import models
-
-import django
 from scripts.utils import Email
 
+import django  # isort:skip
+django.setup()  # isort:skip
+
+from central import models  # noqa isort:skip
+
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'exercise.settings')
-django.setup()
 
 filename = 'users.csv'
 
@@ -64,7 +65,7 @@ def main(client, email):
     community_counter = Counter(community_creators_ids)
     stage_comment_likes_counter = Counter(stage_comments_likers_ids)
 
-    with open(filename, 'wb') as csvfile:
+    with open(filename, 'w') as csvfile:
         userwriter = csv.writer(csvfile)
         userwriter.writerow(['Active Users', 'Activities'])
 
@@ -164,6 +165,7 @@ def parse_arguments():
     )
 
     return parser.parse_args()
+
 
 if __name__ == "__main__":
     ns = parse_arguments()

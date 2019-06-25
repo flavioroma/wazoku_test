@@ -1,9 +1,11 @@
 *.pyc
+*.cfg
 db.sqlite3
 pip-selfcheck.json
 
 lib/
+lib64
 bin/
 include/
+share/
 local
-

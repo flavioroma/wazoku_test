@@ -10,16 +10,16 @@ site then emails the resulting data file to a named manager.
 
 Copying the repository
 
-Due to the public nature of forks we suggest you duplicate the repo rather then forking it. 
-You will need to create your own repo e.g. `[your_github_username]/wazoku_test` and then clone 
+Due to the public nature of forks we suggest you duplicate the repo rather then forking it.
+You will need to create your own repo e.g. `[your_github_username]/wazoku_test` and then clone
 this repo `chrispbailey/wazoku_test` and push the code into your new one. You can follow the steps for doing this here: https://help.github.com/articles/duplicating-a-repository/
 
-Before proceeded be aware that this exercise assumes you are using a linux machine with [pip](https://pip.pypa.io/en/stable) and [virtualenv](https://virtualenv.pypa.io/en/stable/) installed. 
+Before proceeded be aware that this exercise assumes you are using a linux machine with [pip](https://pip.pypa.io/en/stable) and [virtualenv](https://virtualenv.pypa.io/en/stable/) installed.
 
 Create a new virtualenv in your checked out repo.
 
     cd /[path_to]/wazoku_test
-    virtualenv .
+    python3.6 -m venv .
 
 
 Then install the dependencies:
@@ -48,7 +48,7 @@ The user export script can be run with the following:
 
 There is also a unit test which can be used to validate the code:
 
-    bin/python manage.py test tests/*
+    bin/python manage.py test tests
 
 
 
